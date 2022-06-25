@@ -246,10 +246,6 @@ public class CouponsApplicationDAO {
             throw ex;
 
         }
-
-
-
-
         ConnectionPool.getInstance().closeAllConnections();
         System.out.println("END");
 
