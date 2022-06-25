@@ -4,6 +4,7 @@ import beans.Catagory;
 import beans.Company;
 import beans.Coupon;
 import beans.Customer;
+import db.ConnectionPool;
 import db.DatabaseManager;
 import exceptions.CouponsSystemException;
 import facades.AdminFacade;
@@ -147,7 +148,6 @@ public class Test {
             System.out.println(customerFacade2.getCustomerDetails());
             System.out.println(customerFacade3.getCustomerDetails());
             System.out.println("|||||insert coupon to Customers|||||");
-
             customerFacade1.purcheseCouponForCustomer(1); //checked amount change...55 to 54
             System.out.println(customerFacade1.getCustomerDetails());
             customerFacade2.purcheseCouponForCustomer(1); //checked amount change...54 to 53
@@ -178,6 +178,10 @@ public class Test {
             System.out.println(e);
         } finally {
             job.stop();
+            ConnectionPool.getInstance().closeAllConnections();
+            t1.stop();
+            System.out.println("END");
+
 
 
 
