@@ -35,7 +35,7 @@ public class CouponExpirationDailyJob implements Runnable {
     }
 
     public void stop() {
-        System.out.println("Good bye System is going to sleep...");
+        System.out.println("Goodbye System is going to sleep...");
         quit = false;
 
     }
